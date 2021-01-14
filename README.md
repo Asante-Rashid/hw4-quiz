@@ -19,5 +19,5 @@ At the end of the quiz you will be able to save your initials and score
 32% delpoyed on time with no errors
 15% UX and CSS design
     *resembles mockup
-    (/assets/demo.gif)
+    [GitHub](/assets/demo.gif)
 13% Repo Quality
