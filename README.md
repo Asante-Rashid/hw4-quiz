@@ -4,7 +4,7 @@ create a coding quiz that runs off of JavaScript
 
 has a begining page with a brief explination and a "Start" button
 
-The timer starts and you are presentec with a question
+The timer starts and you are presented with a question
 
 the next question will pop up
 
