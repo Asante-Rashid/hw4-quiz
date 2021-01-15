@@ -1,0 +1,6 @@
+var questionNumberEl = document.getElementById("Question-Number")
+var questionEl = document.getElementById("Question")
+var buttonA = document.getElementById("Button-A")
+var buttonB = document.getElementById("Button-B")
+var buttonC = document.getElementById("Button-C")
+var buttonD = document.getElementById("Button-D")
