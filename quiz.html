@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./scores.html">High Scores</a>
-          <span class="navbar-text">
-              <!-- placeholder countdown timer. once the page changes the timer will start-->
-            60
-          </span>
-        </div>
-      </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./scores.html">High Scores</a>
+      <span class="navbar-text">
+        <!-- countdown timer that starts when this page appears. take away 10 seconds everytime the wrong answer is chosen-->
+        60
+      </span>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col card">
+        <div id="Question-Number" class="card-header">
+          Question 1/5
+        </div>
+        <div class="card-body">
+          <h5 id="Question" class="card-title">Placeholder question________</h5>
+          <a id="Button-A" href="#" class="btn btn-primary">A) first selection</a>
+          <a id="Button-B" href="#" class="btn btn-primary">B) first selection</a>
+          <a id="Button-C" href="#" class="btn btn-primary">C) first selection</a>
+          <a id="Button D" href="#" class="btn btn-primary">D) first selection</a>
+        </div>
+        <!-- placeholder for correct/wrong answer text -->
+        <!-- <div class="card-header">
+          Question 1/5
+        </div> -->
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>
