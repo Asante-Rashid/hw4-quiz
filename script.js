@@ -4,10 +4,10 @@ var timerElement = document.querySelector(".timer-count");
 var questionEl = document.querySelector(".question")
 var selections = document.querySelectorAll(".btn")
 var questionN = document.getElementById("Question-Number")
-var buttonA = document.getElementById("Button-A")
-var buttonB = document.getElementById("Button-B")
-var buttonC = document.getElementById("Button-C")
-var buttonD = document.getElementById("Button-D")
+var buttonA = document.getElementById("A")
+var buttonB = document.getElementById("B")
+var buttonC = document.getElementById("C")
+var buttonD = document.getElementById("D")
 
 var questionBank = [
     {
@@ -95,7 +95,7 @@ function startTimer() {
         // // Tests if time has run out
         if (timerCount === 0) {
             clearInterval(timer);
-          
+
         }
     }, 1000);
 }
@@ -110,20 +110,27 @@ function renderQuestion() {
     buttonB.textContent = Choice.B
     buttonC.textContent = Choice.C
     buttonD.textContent = Choice.D
-  }
+}
 
-  function selectAnswer(event) {
+function selectAnswer(event) {
+    checkAnswer(event.target);
     questionCount++;
     renderQuestion()
-    checkAnswer(event.target);
-  }
+}
 
-  function checkAnswer(event) {
-    console.log(event)
-  }
+function checkAnswer(event) {
+    console.log(event.id, questionBank[questionCount].correctAnswer)
+    correctAnswer = questionBank[questionCount].correctAnswer;
+    if (event.id === correctAnswer) {
+        console.log("correct!")
+    } else {
+        console.log("incorrect!")
+    }
+    
+}
 
-  for ( selection of selections) {
-  selection.addEventListener("click", selectAnswer);
-  };
+for (selection of selections) {
+    selection.addEventListener("click", selectAnswer);
+};
 
 startQuiz();
