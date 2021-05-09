@@ -2,7 +2,7 @@
 
 var timerElement = document.querySelector(".timer-count");
 var questionEl = document.querySelector(".question")
-var select = document.querySelector(".btn")
+var selections = document.querySelectorAll(".btn")
 var questionN = document.getElementById("Question-Number")
 var buttonA = document.getElementById("Button-A")
 var buttonB = document.getElementById("Button-B")
@@ -118,6 +118,8 @@ function renderQuestion() {
     // checkAnswer();
   }
 
-  select.addEventListener("click", selectAnswer);
+  for ( selection of selections) {
+  selection.addEventListener("click", selectAnswer);
+  };
 
 startQuiz();
