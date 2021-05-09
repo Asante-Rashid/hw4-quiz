@@ -1,7 +1,8 @@
 // var questionNumberEl = document.getElementById("Question-Number")
 
 var timerElement = document.querySelector(".timer-count");
-var questionEl = document.getElementById("Question")
+var questionEl = document.querySelector(".question")
+var questionN = document.getElementById("Question-Number")
 var buttonA = document.getElementById("Button-A")
 var buttonB = document.getElementById("Button-B")
 var buttonC = document.getElementById("Button-C")
@@ -9,6 +10,7 @@ var buttonD = document.getElementById("Button-D")
 
 var questionBank = [
     {
+        number: "Question 1/5",
         question: "sample question 1",
         answers: {
             A: "1",
@@ -20,6 +22,7 @@ var questionBank = [
     },
 
     {
+        number: "Question 2/5",
         question: "sample question 2",
         answers: {
             A: "5",
@@ -36,7 +39,7 @@ var questionBank = [
 
 function startQuiz() {
     timerCount = 60;
-    // renderQuestions()
+    renderQuestion()
     startTimer()
 }
 
@@ -54,12 +57,23 @@ function startTimer() {
         //     }
         // }
         // // Tests if time has run out
-        // if (timerCount === 0) {
-        //     // Clears interval
-        //     clearInterval(timer);
-        //     loseGame();
-        // }
+        if (timerCount === 0) {
+            clearInterval(timer);
+          
+        }
     }, 1000);
 }
+
+function renderQuestion() {
+    // Randomly picks word from words array
+    chosenQuestion = questionBank[0];
+    questionN.textContent = chosenQuestion.number
+    questionEl.textContent = chosenQuestion.question
+    Choice = chosenQuestion.answers
+    buttonA.textContent = Choice.A
+    buttonB.textContent = Choice.B
+    buttonC.textContent = Choice.C
+    buttonD.textContent = Choice.D
+  }
 
 startQuiz();
