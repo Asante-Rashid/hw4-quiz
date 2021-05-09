@@ -2,6 +2,7 @@
 
 var timerElement = document.querySelector(".timer-count");
 var questionEl = document.querySelector(".question")
+var select = document.querySelector(".btn")
 var questionN = document.getElementById("Question-Number")
 var buttonA = document.getElementById("Button-A")
 var buttonB = document.getElementById("Button-B")
@@ -33,18 +34,53 @@ var questionBank = [
         correctAnswer: "B"
     },
 
+    {
+        number: "Question 3/5",
+        question: "sample question 3",
+        answers: {
+            A: "5",
+            B: "6",
+            C: "7",
+            D: "8",
+        },
+        correctAnswer: "B"
+    },
+    {
+        number: "Question 4/5",
+        question: "sample question 4",
+        answers: {
+            A: "5",
+            B: "6",
+            C: "7",
+            D: "8",
+        },
+        correctAnswer: "B"
+    },
+    {
+        number: "Question 5/5",
+        question: "sample question 5",
+        answers: {
+            A: "5",
+            B: "6",
+            C: "7",
+            D: "8",
+        },
+        correctAnswer: "B"
+    },
+
 ];
 
 // startButton.addEventListener("click", startQuiz);
 
 function startQuiz() {
     timerCount = 60;
+    questionCount = 0;
     renderQuestion()
     startTimer()
 }
 
 function startTimer() {
-    // Sets timer
+    // runs function every 1000 ms
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
@@ -65,8 +101,8 @@ function startTimer() {
 }
 
 function renderQuestion() {
-    // Randomly picks word from words array
-    chosenQuestion = questionBank[0];
+
+    chosenQuestion = questionBank[questionCount];
     questionN.textContent = chosenQuestion.number
     questionEl.textContent = chosenQuestion.question
     Choice = chosenQuestion.answers
@@ -75,5 +111,13 @@ function renderQuestion() {
     buttonC.textContent = Choice.C
     buttonD.textContent = Choice.D
   }
+
+  function selectAnswer() {
+    questionCount++;
+    renderQuestion()
+    // checkAnswer();
+  }
+
+  select.addEventListener("click", selectAnswer);
 
 startQuiz();
