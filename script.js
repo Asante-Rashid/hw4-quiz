@@ -43,7 +43,7 @@ var questionBank = [
             C: "7",
             D: "8",
         },
-        correctAnswer: "B"
+        correctAnswer: "C"
     },
     {
         number: "Question 4/5",
@@ -54,7 +54,7 @@ var questionBank = [
             C: "7",
             D: "8",
         },
-        correctAnswer: "B"
+        correctAnswer: "D"
     },
     {
         number: "Question 5/5",
@@ -65,7 +65,7 @@ var questionBank = [
             C: "7",
             D: "8",
         },
-        correctAnswer: "B"
+        correctAnswer: "A"
     },
 
 ];
@@ -112,10 +112,14 @@ function renderQuestion() {
     buttonD.textContent = Choice.D
   }
 
-  function selectAnswer() {
+  function selectAnswer(event) {
     questionCount++;
     renderQuestion()
-    // checkAnswer();
+    checkAnswer(event.target);
+  }
+
+  function checkAnswer(event) {
+    console.log(event)
   }
 
   for ( selection of selections) {
