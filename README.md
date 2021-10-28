@@ -1,23 +1,18 @@
-# hw4-quiz
+#  Code Quiz
+---
+![](https://img.shields.io/badge/license-mit-brightgreen?style=plastic) ![](https://img.shields.io/badge/framework-bootstrap-blue?style=plastic) ![](https://img.shields.io/badge/language-HTML-red?style=plastic) ![](https://img.shields.io/badge/language-CSS-red?style=plastic) ![](https://img.shields.io/badge/language-JavaScript-red?style=plastic) 
+## Description
 
-create a coding quiz that runs off of JavaScript
+This is a timed coding quiz with multiple choice questions. This app runs in the browser, and features dynamicaly updated HTML and CSS powered by javaScript code. 
 
-has a begining page with a brief explination and a "Start" button
+## Usage
 
-The timer starts and you are presented with a question
+Click the start button and the quiz will begin with a timer. For every incorrect answer additional time is subtracted from the clock. Once all the questions are answered or the timer reaches zero the quiz will end and you be taken to the scoreboard. There you will be able to enter your initials and save your score. 
 
-the next question will pop up
 
-if you are incorrect an interval of time will be taken away from the timer
+<img alt="password generator" src="./assets/demo.gif" >
+<!-- <img alt="java script code used" src="./javascript.png" width="1000"> -->
+## link
 
-when all questions are answered or the timer runs out, the game is over
+https://asante-rashid.github.io/hw4-quiz/
 
-At the end of the quiz you will be able to save your initials and score
-
-<!-- Grade -->
-40% satisfies above requirements
-32% delpoyed on time with no errors
-15% UX and CSS design
-    *resembles mockup
-    [GitHub](/assets/demo.gif)
-13% Repo Quality
