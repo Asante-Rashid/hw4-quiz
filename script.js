@@ -70,8 +70,6 @@ var questionBank = [
 
 ];
 
-// startButton.addEventListener("click", startQuiz);
-
 function startQuiz() {
     timerCount = 60;
     questionCount = 0;
@@ -84,18 +82,9 @@ function startTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
-        // if (timerCount >= 0) {
-        //     // Tests if win condition is met
-        //     if (isWin && timerCount > 0) {
-        //         // Clears interval and stops timer
-        //         clearInterval(timer);
-        //         winGame();
-        //     }
-        // }
-        // // Tests if time has run out
         if (timerCount === 0) {
             clearInterval(timer);
-
+            renderScore();
         }
     }, 1000);
 }
@@ -124,13 +113,21 @@ function checkAnswer(event) {
     if (event.id === correctAnswer) {
         console.log("correct!")
     } else {
-        console.log("incorrect!")
+        timerCount -= 10;
+        console.log("incorrect!" + timerCount)
     }
     
 }
 
+function renderScore() {
+//set attribute for quiz container to false
+//set attribute for initials container to true
+};
+
+// click event listener on the quiz answer
 for (selection of selections) {
     selection.addEventListener("click", selectAnswer);
 };
 
+// runs as soon as the quiz screen renders
 startQuiz();
