@@ -2,6 +2,7 @@
 
 var timerElement = document.querySelector(".timer-count");
 var questionEl = document.querySelector(".question")
+var resultEl = document.querySelector(".result")
 var selections = document.querySelectorAll(".btn")
 var questionN = document.getElementById("Question-Number")
 var buttonA = document.getElementById("A")
@@ -14,7 +15,7 @@ var questionBank = [
         number: "Question 1/5",
         question: "sample question 1",
         answers: {
-            A: "1",
+            A: "Correct",
             B: "2",
             C: "3",
             D: "4",
@@ -27,7 +28,7 @@ var questionBank = [
         question: "sample question 2",
         answers: {
             A: "5",
-            B: "6",
+            B: "Correct",
             C: "7",
             D: "8",
         },
@@ -40,7 +41,7 @@ var questionBank = [
         answers: {
             A: "5",
             B: "6",
-            C: "7",
+            C: "Correct",
             D: "8",
         },
         correctAnswer: "C"
@@ -52,7 +53,7 @@ var questionBank = [
             A: "5",
             B: "6",
             C: "7",
-            D: "8",
+            D: "Correct",
         },
         correctAnswer: "D"
     },
@@ -60,7 +61,7 @@ var questionBank = [
         number: "Question 5/5",
         question: "sample question 5",
         answers: {
-            A: "5",
+            A: "Correct",
             B: "6",
             C: "7",
             D: "8",
@@ -72,6 +73,7 @@ var questionBank = [
 
 function startQuiz() {
     timerCount = 60;
+    playerScore = 0;
     questionCount = 0;
     renderQuestion()
     startTimer()
@@ -111,10 +113,13 @@ function checkAnswer(event) {
     console.log(event.id, questionBank[questionCount].correctAnswer)
     correctAnswer = questionBank[questionCount].correctAnswer;
     if (event.id === correctAnswer) {
-        console.log("correct!")
+        playerScore += 20;
+        resultEl.textContent = "correct";
+        console.log("correct!" + "new score is" + playerScore)
     } else {
         timerCount -= 10;
-        console.log("incorrect!" + timerCount)
+        resultEl.textContent = "Incorrect";
+        console.log("incorrect!" )
     }
     
 }
