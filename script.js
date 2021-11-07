@@ -4,7 +4,10 @@ var timerElement = document.querySelector(".timer-count");
 var questionEl = document.querySelector(".question")
 var resultEl = document.querySelector(".result")
 var selections = document.querySelectorAll(".btn")
+var quizEl = document.getElementById("quiz-bank")
+var initialEl = document.getElementById("initial-form")
 var questionN = document.getElementById("Question-Number")
+var signUpButton = document.querySelector("#sign-up");
 var buttonA = document.getElementById("A")
 var buttonB = document.getElementById("B")
 var buttonC = document.getElementById("C")
@@ -84,9 +87,9 @@ function startTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
-        if (timerCount === 0) {
-            clearInterval(timer);
+        if (timerCount <= 0) {
             renderScore();
+            clearInterval(timer);
         }
     }, 1000);
 }
@@ -117,14 +120,21 @@ function checkAnswer(event) {
         resultEl.textContent = "correct";
         console.log("correct!" + "new score is" + playerScore)
     } else {
-        timerCount -= 10;
+        timerCount -= 25;
         resultEl.textContent = "Incorrect";
-        console.log("incorrect!" )
+       
     }
     
 }
 
+signUpButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    document.location.href = "./scores.html";
+  });
+
 function renderScore() {
+    quizEl.style.display = "none";   
+    initialEl.style.display = "block";  
 //set attribute for quiz container to false
 //set attribute for initials container to true
 };

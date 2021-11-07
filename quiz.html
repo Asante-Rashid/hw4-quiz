@@ -23,7 +23,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col"></div>
-      <div class="col card">
+      <div class="col card mt-4" id="quiz-bank" style="display: block;">
         <div id="Question-Number" class="card-header">
           Question 1/5
         </div>
@@ -33,6 +33,27 @@
           <a id="B" href="#" class="btn btn-primary">B) first selection</a>
           <a id="C" href="#" class="btn btn-primary">C) first selection</a>
           <a id="D" href="#" class="btn btn-primary">D) first selection</a>
+        </div>
+        <p class="card-text"><small class="text-muted result"></small></p>
+        <!-- placeholder for correct/wrong answer text -->
+        <!-- <div class="card-header">
+          Question 1/5
+        </div> -->
+      </div>
+      <div class="col card mt-4" id="initial-form" style="display: none;">
+        
+        <div class="card-body">
+          <h2>All done!</h2>
+          <p>your final score is _____</p>
+          <form method="POST">
+            <div class="input-group">
+              <label class="mr-2" for="initials">Enter initials </label>
+              <input type="text" name="initials" id="initials" />
+            </div>
+            <a href="./scores.html">
+              <button class="btn btn-primary mt-2" id="sign-up">Sign Up</button>
+            </a>
+          </form>
         </div>
         <p class="card-text"><small class="text-muted result"></small></p>
         <!-- placeholder for correct/wrong answer text -->
