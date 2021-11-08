@@ -6,6 +6,7 @@ var resultEl = document.querySelector(".result")
 var selections = document.querySelectorAll(".btn")
 var quizEl = document.getElementById("quiz-bank")
 var initialEl = document.getElementById("initial-form")
+var finalScoreEl = document.getElementById("final-score")
 var questionN = document.getElementById("Question-Number")
 var signUpButton = document.querySelector("#sign-up");
 var buttonA = document.getElementById("A")
@@ -108,8 +109,13 @@ function renderQuestion() {
 
 function selectAnswer(event) {
     checkAnswer(event.target);
-    questionCount++;
-    renderQuestion()
+    if (questionCount < questionBank.length-1) {
+        questionCount++;
+        renderQuestion()
+    } else {
+        renderScore()
+
+    }
 }
 
 function checkAnswer(event) {
@@ -122,21 +128,22 @@ function checkAnswer(event) {
     } else {
         timerCount -= 25;
         resultEl.textContent = "Incorrect";
-       
+
     }
-    
+
 }
 
-signUpButton.addEventListener("click", function(event) {
+signUpButton.addEventListener("click", function (event) {
     event.preventDefault();
     document.location.href = "./scores.html";
-  });
+});
 
 function renderScore() {
-    quizEl.style.display = "none";   
-    initialEl.style.display = "block";  
-//set attribute for quiz container to false
-//set attribute for initials container to true
+    finalScoreEl.textContent = "your final score is " + playerScore;
+    quizEl.style.display = "none";
+    initialEl.style.display = "block";
+    //set attribute for quiz container to false
+    //set attribute for initials container to true
 };
 
 // click event listener on the quiz answer
