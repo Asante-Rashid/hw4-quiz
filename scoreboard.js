@@ -1,4 +1,5 @@
 var scoreList = document.querySelector("#score-list");
+var clearBtn = document.querySelector("#clear");
 
 var ScoreBoard = [];
 
@@ -34,20 +35,10 @@ function init() {
   renderScores();
 }
 
-// Add click event to todoList element
-// todoList.addEventListener("click", function(event) {
-//     var element = event.target;
-  
-//     // Checks if element is a button
-//     if (element.matches("button") === true) {
-//       // Get its data-index value and remove the todo element from the list
-//       var index = element.parentElement.getAttribute("data-index");
-//       ScoreBoard.splice(index, 1);
-  
-//       // Store updated todos in localStorage, re-render the list
-//       storeTodos();
-//       renderTodos();
-//     }
-//   });
+clearBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    localStorage.clear();
+    renderScores()
+});
 
 init()
