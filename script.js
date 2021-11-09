@@ -83,8 +83,9 @@ function startQuiz() {
     timerCount = 60;
     playerScore = 0;
     questionCount = 0;
-    renderQuestion()
-    startTimer()
+    pullHistory();
+    renderQuestion();
+    startTimer();
 }
 
 function startTimer() {
@@ -151,10 +152,21 @@ signUpButton.addEventListener("click", function (event) {
     ScoreBoard.push(studentGrade);
     
 
-    localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+    localStorage.setItem("ScoreBoard", JSON.stringify(ScoreBoard));
 
     document.location.href = "./scores.html";
 });
+
+function pullHistory() {
+    // Get stored scoreBoard from localStorage
+    var storedCores = JSON.parse(localStorage.getItem("ScoreBoard"));
+  
+    // If scores were retrieved from localStorage, update the ScoreBoard array to it
+    if (storedCores !== null) {
+        ScoreBoard = storedCores;
+    }
+  
+  }
 
 function renderScore() {
     finalScoreEl.textContent = "your final score is " + playerScore;
