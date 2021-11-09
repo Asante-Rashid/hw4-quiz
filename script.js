@@ -6,6 +6,7 @@ var resultEl = document.querySelector(".result")
 var selections = document.querySelectorAll(".btn")
 var quizEl = document.getElementById("quiz-bank")
 var initialEl = document.getElementById("initial-form")
+var initialEntry = document.getElementById("initials")
 var finalScoreEl = document.getElementById("final-score")
 var questionN = document.getElementById("Question-Number")
 var signUpButton = document.querySelector("#sign-up");
@@ -13,6 +14,7 @@ var buttonA = document.getElementById("A")
 var buttonB = document.getElementById("B")
 var buttonC = document.getElementById("C")
 var buttonD = document.getElementById("D")
+
 
 var questionBank = [
     {
@@ -75,6 +77,8 @@ var questionBank = [
 
 ];
 
+var ScoreBoard = [];
+
 function startQuiz() {
     timerCount = 60;
     playerScore = 0;
@@ -109,7 +113,7 @@ function renderQuestion() {
 
 function selectAnswer(event) {
     checkAnswer(event.target);
-    if (questionCount < questionBank.length-1) {
+    if (questionCount < questionBank.length - 1) {
         questionCount++;
         renderQuestion()
     } else {
@@ -133,8 +137,22 @@ function checkAnswer(event) {
 
 }
 
+// todo finish the sequence for this shit
 signUpButton.addEventListener("click", function (event) {
     event.preventDefault();
+
+    var studentGrade = {
+
+        grade: playerScore,
+        initials: initialEntry.value.trim()
+    };
+
+    // Add new studentGrade to ScoreBoard array, clear the input object
+    ScoreBoard.push(studentGrade);
+    
+
+    localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+
     document.location.href = "./scores.html";
 });
 
